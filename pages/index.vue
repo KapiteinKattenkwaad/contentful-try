@@ -1,47 +1,53 @@
 <template>
-<div>
+  <div>
     <HeroHome></HeroHome>
 
-  <section class="container">
+    <section class="container">
 
-     <!-- <Cards /> -->
+      <!-- <Cards /> -->
 
- <!--  <div v-for="post in posts" v-bind:key="post.id">
+      <!--  <div v-for="post in posts" v-bind:key="post.id">
       <h2> {{ post.fields.title }} </h2>
       <h3> {{ post.fields.slug }} </h3>
       <h3> {{ post.fields.content }} </h3>
     </div>
 -->
 
-   <div class="row" id="cards" v-for="post in posts" v-bind:key="post.id">
-     <div class="column">
-      <div class="card">
-        <img src="" alt="" class="card-image">
-          <h3 class="card-title">{{ post.fields.title }}</h3>
-        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero unde quod minima. Quibusdam
-          sunt quis harum repellat id provident temporibus!</p>
-        <nuxt-link to="/services">
-          <button class="button header-button2 card-button">Meer weten?</button>
-        </nuxt-link>
-      </div>
-    </div>
-  </div>
-   
 
-  </section>
+
+      <div class="row">
+        <div id="cards" v-for="post in posts" v-bind:key="post.id">
+          <div class="column">
+            <div class="card">
+              <img :src="post.fields.fotoBoven.fields.file.url" v-if="post.fields.fotoBoven" class="card-image" />
+
+              <h3 class="card-title">{{ post.fields.title }}</h3>
+              <p class="card-text"> {{ post.fields.content }} </p>
+              <nuxt-link to="/services">
+                <button class="button header-button2 card-button">Meer weten?</button>
+              </nuxt-link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </section>
   </div>
 </template>
 
 <script>
   import Cards from '~/components/Cards.vue'
   import HeroHome from '~/components/HeroHome.vue'
-  import { createClient } from '~/plugins/contentful.js'
+  import {
+    createClient
+  } from '~/plugins/contentful.js'
   const client = createClient()
 
   export default {
-     data: function () {
+    data: function () {
       return {
-        image: "posts.fields.file.url"
+        image: "post.fields.file.url"
       };
     },
     transition: "default",
@@ -49,7 +55,7 @@
       Cards,
       HeroHome
     },
-      async asyncData({
+    async asyncData({
       env
     }) {
       try {
@@ -68,23 +74,23 @@
 </script>
 
 <style scoped lang="scss">
+  .page-enter-active,
+  .page-leave-active {
+    transition-property: opacity;
+    transition-timing-function: ease-in-out;
+    transition-duration: 900ms;
+  }
 
-.page-enter-active,
-.page-leave-active {
-  transition-property: opacity;
-  transition-timing-function: ease-in-out;
-  transition-duration: 900ms;
-}
-.page-enter,
-.page-leave-to {
-  opacity: 0;
-}
+  .page-enter,
+  .page-leave-to {
+    opacity: 0;
+  }
 
 
 
-//cards
+  //cards
 
-$color-main-black: #242424;
+  $color-main-black: #242424;
 
   .card-title,
   .card-text,
@@ -153,5 +159,4 @@ $color-main-black: #242424;
       margin-bottom: 20px;
     }
   }
-
 </style>
