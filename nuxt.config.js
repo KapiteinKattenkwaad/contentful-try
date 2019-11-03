@@ -60,9 +60,12 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
-      { rel: 'apple-touch-icon', href: '/img/icons/apple-touch-icon.png' }
+      { rel: 'apple-touch-icon', href: '/img/icons/apple-touch-icon.png' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Big+Shoulders+Text|McLaren&display=swap' }
+
     ]
   },
+
 
   /*
    ** Customize the progress-bar color
@@ -72,7 +75,16 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['modern-normalize/modern-normalize.css'],
+
+
+css: [ 'modern-normalize/modern-normalize.css',
+
+  // SCSS file in the project
+  '@/assets/scss/nav.scss',
+  '@/assets/scss/buttons.scss',
+  '@/assets/scss/intro.scss',
+  '@/assets/scss/colors.scss'
+],
 
   /*
    ** Plugins to load before mounting the App
@@ -82,7 +94,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/pwa'],
+  modules: ['@nuxtjs/pwa', ],
 
   /* Force scroll-top when route change */
   router: {

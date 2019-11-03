@@ -1,0 +1,102 @@
+$color-main-yellow: #fff82b;
+$color-lighter-yellow: #fffa70;
+$color-main-gray: #828282;
+$color-lighter-gray: #b4b4b4;
+$color-black: #383838;
+$color-main-black: #1f1f1f;
+
+.button {
+    padding: 1em;
+    text-transform: uppercase;
+    border-radius: 20px;
+    color: $color-main-yellow;
+    background: $color-main-gray;
+    border: none;
+    box-shadow: 10px 5px 5px 0px rgba(0,0,0,0.25);
+    
+    .header-button {
+        font-size: 2em;
+    }
+    &:hover {
+        box-shadow: none;
+        cursor: pointer;
+    }
+}
+
+$angle: 6px;
+$angle-o: 2px;
+
+.button {
+    padding: 1em;
+    text-transform: uppercase;
+    border-radius: 20px;
+    border: none;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-family: 'Barlow', sans-serif;
+}
+
+.header-button {
+  color: $color-lighter-yellow;
+  background: $color-main-gray;
+  margin-right: 1rem;
+}
+
+.header-button2 {
+  color: $color-main-black;
+  background: $color-lighter-yellow;
+}
+
+.header-button, .header-button2 {
+  font-weight: bold;
+  font-size: 0.9em;
+  transition: all .3s linear 0s;
+  position: relative;
+  bottom: 0;
+  margin-top: 6rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+  box-shadow: -5px 5px 0 $color-black;
+  
+  &:hover {
+    cursor: pointer;
+    top: 3px;
+    left: -3px;
+    box-shadow: none;
+    
+    &::after {
+      top: 1px;
+      left: -2px;
+      width: $angle-o;
+      height: $angle-o;
+    }
+    
+    &::before {
+      bottom: -2px;
+      right: 1px;
+      width: $angle-o;
+      height: $angle-o;
+    }
+  }
+}
+
+nuxt-link.button { 
+    position: relative; 
+}
+
+nuxt-link:active.button {
+  top: 6px;
+  left: -6px;
+  box-shadow: none;
+  color: blue;
+  
+  &:before {
+    bottom: 1px;
+    right: 1px;
+  }
+  
+  &:after {
+    top: 1px;
+    left: 1px;
+  }
+}

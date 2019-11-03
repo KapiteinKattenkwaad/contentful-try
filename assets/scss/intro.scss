@@ -1,0 +1,29 @@
+$color1: rgba(1, 0, 1, 1);
+$color2: rgba(43, 5, 4, 1);
+$color3: rgba(255, 221, 2, 0.1);
+$color4: rgba(47, 45, 41, 0.5);
+$color5: rgba(135, 64, 0, 1);
+
+
+.intro {
+    width: 100vw;
+    height: 60vh;
+    background: linear-gradient(180deg, $color4, $color3);
+    &__card {
+        margin-top: -18rem;
+        border-radius: 20px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25); /* this adds the "card" effect */
+        margin-left: 8rem;
+        margin-right: 8rem;
+        padding: 2rem;
+        background-color: white;
+    }
+    &__title {
+        font-size: 4em;
+        text-align: center;
+    }
+    &__image {
+        width: 100vw;
+        height: 300px;
+    }
+}
