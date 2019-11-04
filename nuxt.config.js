@@ -22,12 +22,17 @@ export default {
   // Set the build mode
   mode: 'universal',
 
+  //fix for netlify 404 page
+  generate: {
+    fallback: true
+  },
+
   /**
    * PWA Manifest file generation
    */
   manifest: {
-    short_name: 'Nuxt Contentful Starter',
-    name: 'Nuxt Contentful Starter',
+    short_name: 'Hijswerken Stijn',
+    name: 'Hijswerken Stijn',
     icons: [
       {
         src: 'apple-touch-icon.png',
@@ -48,7 +53,7 @@ export default {
     title: pkg.name,
     htmlAttrs: {
       prefix: 'og: http://ogp.me/ns#',
-      lang: 'en'
+      lang: 'nl'
     },
     meta: [
       { charset: 'utf-8' },

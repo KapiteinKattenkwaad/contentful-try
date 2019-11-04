@@ -1,6 +1,5 @@
 <template>
   <section class="container">
-     <img class="intro__image" src="https://images.pexels.com/photos/255419/pexels-photo-255419.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="about"> 
     <div class="intro"> </div>
     <div class="intro__card">
       
