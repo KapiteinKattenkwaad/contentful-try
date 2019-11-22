@@ -16,7 +16,6 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "now-build": "nuxt generate",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue .",
     "precommit": "npm run lint"

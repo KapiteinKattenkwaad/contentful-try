@@ -2,8 +2,6 @@
   <section class="container">
     <div class="intro"> </div>
     <div class="intro__card">
-      
-
       <h1 class="intro__title"> {{ about.fields.uitlegBoven }} </h1>
       <div> {{ about.fields.meerUitleg }} </div>
       <img :src="about.fields.fotoStijn.fields.file.url" :alt="about.fields.titel" v-if="about.fields.fotoStijn" />

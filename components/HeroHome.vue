@@ -4,7 +4,7 @@
             Voor al uw kraanwerken
         </h2>
         <h1 class="subtitle">
-            Hijswerken Stijn
+            Hijswerken Leys
         </h1>
         <div class="buttons-wrapper">
             <nuxt-link to="/contact">
