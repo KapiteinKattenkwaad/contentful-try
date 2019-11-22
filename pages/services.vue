@@ -2,11 +2,14 @@
   <section class="container">
     <div class="intro"> </div>
     <div class="intro__card">
-      <div>
-        <h1> {{ services.fields.titel }} </h1>
-        <div> {{ services.fields.uitleg }} </div>
-        <img :src="services.fields.image.fields.file.url" :alt="services.fields.titel" v-if="services.fields.image" />
-      </div>
+    
+          <div v-for="service in services" v-bind:key="service.id">
+          <h1>{{ service.fields.titel }}</h1>
+          <p> {{ service.fields.uitleg }} </p>
+          <img :src="service.fields.image.fields.file.url" :alt="service.fields.titel" v-if="service.fields.image" />
+
+        </div>
+  
     </div>
   </section>
 </template>
@@ -34,7 +37,7 @@
           order: '-sys.createdAt'
         });
         return {
-          services: getServices.items[0]
+          services: getServices.items
         };
       } catch (e) {
         console.error(e)
